@@ -1,36 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
-    const [userData, setUserData] = useState({
-        email: "",
-        password: "",
-    });
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const changeInputHandler = (e) => {
-        setUserData((prevState) => {
-            return { ...prevState, [e.target.name]: e.target.value };
-        });
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        console.log(email, password);
     };
 
     return (
-        <section className="login">
-            <div className="container">
-                <h2>Sign In</h2>
-                <form action="" className="form login_form">
-                    <p className="form_error-message">This is an error Message!</p>
-                    <input type="text" placeholder="Email" name="email" value={userData.email} onChange={changeInputHandler} autoFocus />
-                    <input type="password" placeholder="Password" name="password" value={userData.password} onChange={changeInputHandler} />
-                    <button type="submit" className="btn primary">
-                        Login
-                    </button>
-                </form>
-                <small>
-                    Don't have an account? <Link to="/register">Register</Link>
-                </small>
-            </div>
-        </section>
+        <div>
+            <form onSubmit={formSubmitHandler}>
+                <div className="mb-3">
+                    <label htmlFor="user-id">User ID</label>
+                    <input type="text" placeholder="Enter user ID" className="form-control" onChange={(e) => setEmail(e.target.value)} />
+                </div>
+                <div>
+                    <label htmlFor="password">Password</label>
+                    <input type="password" placeholder="Enter Password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                <Link to={"/dashboard"}>Login</Link>
+            </form>
+        </div>
     );
 };
 
