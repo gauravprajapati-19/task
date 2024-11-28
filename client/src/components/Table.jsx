@@ -6,10 +6,10 @@ const Table = () => {
     const [entries, setEntries] = useState(DUMMY_ENTRIES);
 
     return (
-        <div>
-            <table>
-                {entries.length > 0 ? (
-                    <div className="container">
+        <div className="table-container">
+            {entries.length > 0 ? (
+                <table className="custom-table">
+                    <thead>
                         <tr>
                             <th>Company Name</th>
                             <th>Company Person Name</th>
@@ -18,25 +18,31 @@ const Table = () => {
                             <th>Company Address</th>
                             <th>Actions</th>
                         </tr>
-                        {entries.map(({ comName, comPersonName, comEmail, comMobile, comAddress }) => (
-                            <tr>
-                                <th>{comName}</th>
-                                <th>{comPersonName}</th>
-                                <th>{comEmail}</th>
-                                <th>{comMobile}</th>
-                                <th>{comAddress}</th>
-                                <th>
-                                    <Link to={"/edit-entry"}>Edit</Link>
+                    </thead>
+                    <tbody>
+                        {entries.map(({ comName, comPersonName, comEmail, comMobile, comAddress }, index) => (
+                            <tr key={index}>
+                                <td>{comName}</td>
+                                <td>{comPersonName}</td>
+                                <td>{comEmail}</td>
+                                <td>{comMobile}</td>
+                                <td>{comAddress}</td>
+                                <td>
+                                    <Link to="/edit-entry" className="btn primary mb-1">
+                                        Edit
+                                    </Link>
                                     <br />
-                                    <Link to={"/delete-entry"}>Delete</Link>
-                                </th>
+                                    <Link to="/delete-entry" className="btn danger">
+                                        Delete
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
-                    </div>
-                ) : (
-                    <h2 className="center">No Entries Found</h2>
-                )}
-            </table>
+                    </tbody>
+                </table>
+            ) : (
+                <h2 className="center">No Entries Found</h2>
+            )}
         </div>
     );
 };
