@@ -1,4 +1,4 @@
-export const DUMMY_POSTS = [
+export const DUMMY_ENTRIES = [
     {
         comName: "XYZ",
         comPersonName: "Mr. XYZ",
