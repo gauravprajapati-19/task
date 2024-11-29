@@ -6,7 +6,7 @@ const Table = () => {
     const [entries, setEntries] = useState(DUMMY_ENTRIES);
 
     return (
-        <div className="table-container">
+        <div className="table-container mt-3">
             {entries.length > 0 ? (
                 <table className="custom-table">
                     <thead>
@@ -28,10 +28,9 @@ const Table = () => {
                                 <td>{comMobile}</td>
                                 <td>{comAddress}</td>
                                 <td>
-                                    <Link to="/edit-entry" className="btn primary mb-1">
+                                    <Link to="/edit-entry" className="btn primary">
                                         Edit
                                     </Link>
-                                    <br />
                                     <Link to="/delete-entry" className="btn danger">
                                         Delete
                                     </Link>

@@ -11,6 +11,8 @@ import DeleteEntry from "./pages/DeleteEntry.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Register from "./pages/Register.jsx";
 import CreateEntry from "./pages/CreateEntry.jsx";
+import Demo from "./pages/Demo.jsx";
+import Demo2 from "./pages/Demo2.jsx";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
             { path: "create-entry", element: <CreateEntry /> },
             { path: "edit-entry", element: <EditEntry /> },
             { path: "delete-entry", element: <DeleteEntry /> },
+            { path: "demo", element: <Demo /> },
+            { path: "demo2", element: <Demo2 /> },
         ],
     },
 ]);

@@ -40,7 +40,6 @@ const CreateEntry = () => {
                 <h2>Create New Entry</h2>
                 <form onSubmit={handleSubmit} className="form create_form">
                     <div>
-                        <label htmlFor="comName">Company Name</label>
                         <input
                             type="text"
                             id="comName"
@@ -48,10 +47,10 @@ const CreateEntry = () => {
                             value={formData.comName} // This is controlled by state
                             onChange={handleChange}
                             required
+                            placeholder="Company Name"
                         />
                     </div>
                     <div>
-                        <label htmlFor="comPersonName">Contact Person Name</label>
                         <input
                             type="text"
                             id="comPersonName"
@@ -59,10 +58,10 @@ const CreateEntry = () => {
                             value={formData.comPersonName} // Controlled field
                             onChange={handleChange}
                             required
+                            placeholder="Contact Person Name"
                         />
                     </div>
                     <div>
-                        <label htmlFor="comEmail">Company Email</label>
                         <input
                             type="email"
                             id="comEmail"
@@ -70,10 +69,10 @@ const CreateEntry = () => {
                             value={formData.comEmail} // Controlled field
                             onChange={handleChange}
                             required
+                            placeholder="Company Email"
                         />
                     </div>
                     <div>
-                        <label htmlFor="comMobile">Company Mobile</label>
                         <input
                             type="text"
                             id="comMobile"
@@ -81,16 +80,17 @@ const CreateEntry = () => {
                             value={formData.comMobile} // Controlled field
                             onChange={handleChange}
                             required
+                            placeholder="Company Mobile"
                         />
                     </div>
                     <div>
-                        <label htmlFor="comAddress">Company Address</label>
                         <textarea
                             id="comAddress"
                             name="comAddress"
                             value={formData.comAddress} // Controlled field
                             onChange={handleChange}
                             required
+                            placeholder="Company Address"
                         />
                     </div>
                     <div>
